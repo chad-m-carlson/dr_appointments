@@ -1,0 +1,28 @@
+<h1>Greetings <%= @patient.full_name %></h1>
+<hr />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h3>Your Appointment List</h3>
+      <ul>
+        <% @patient.appointments.each do |a| %>
+        <li>
+            <%= a.doctor.full_name %> | <%= a.visit_type %> | <%= a.date %>
+          </li>
+          <% end%>
+      </ul>
+      </div>
+      <div class="col-sm">
+        <h3>Doctor List</h3>
+        <ul>
+          <%# @patients.each do |p| %>
+          <li>
+            <%# p.full_name %>
+          </li>
+          <%#end%>
+        </ul>
+      </div>
+    </div>
+    <%= button_to 'Delete Patient', patient_path(@patient), method: :delete, class: "ui red button inverted" %>
+  </div>

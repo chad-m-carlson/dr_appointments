@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+3.times do |p|
+  Patient.create(first_name: "#{p}_first", last_name: "#{p}_last")
+  Doctor.create(first_name: "#{p}_first", last_name: "#{p}_last", specialty: "#{p}_specialty")
+end
+
+Appointment.create(doctor_id: Doctor.first.id, patient_id: Patient.last.id)
+Appointment.create(doctor_id: Doctor.first.id, patient_id: Patient.first.id)

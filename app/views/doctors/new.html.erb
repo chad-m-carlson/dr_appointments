@@ -1,0 +1,16 @@
+<h1>Add a New Doctor</h1>
+<div class="form group">
+  <%= form_for @doctor do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+</div>
+<div class="form group">
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+</div>
+<div class="form group">
+  <%= f.label :specialty %>
+  <%= f.text_field :specialty %>
+</div>
+<%= f.submit nil, class: "btn btn-primary" %>
+<% end %>

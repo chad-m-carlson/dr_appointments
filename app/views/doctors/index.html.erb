@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 style="margin: auto">Doctors</h1>
+  <div class="row">
+    <div class="col-sm">
+      <h3>All Doctors</h3>
+      <% @doctors.each do |d|%>
+        <ul>
+          <li><%= link_to d.full_name, doctor_path(d) %></li>
+        </ul>
+      <% end%>
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
